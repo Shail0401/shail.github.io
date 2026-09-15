@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+
+@use './styles/material-theme';
+@use './styles/theme-tokens';
+@use './styles/typography';
+@use './styles/animations';
+@use './styles/utilities';
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+
+  background:
+    var(--portfolio-bg);
+
+  color:
+    var(--portfolio-text);
+
+  transition:
+    background-color var(--portfolio-transition),
+    color var(--portfolio-transition);
+}
+
+body {
+  min-height: 100vh;
+}

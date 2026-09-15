@@ -1,0 +1,27 @@
+# Node / Angular
+node_modules/
+dist/
+.angular/
+coverage/
+.vite/
+.cache/
+.parcel-cache/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.vscode/
+.cursor/
+.codex/
+.gemini/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Environment
+.env
+.env.*

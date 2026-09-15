@@ -1,0 +1,58 @@
+:root {
+
+    /* Background */
+    --portfolio-bg: #ffffff;
+    --portfolio-surface: #f8fafc;
+    --portfolio-surface-raised: #ffffff;
+
+    /* Text */
+    --portfolio-text: #0f172a;
+    --portfolio-text-secondary: #475569;
+    --portfolio-text-muted: #64748b;
+
+    /* Borders */
+    --portfolio-border: #e2e8f0;
+
+    /* Brand */
+    --portfolio-primary: #6366f1;
+    --portfolio-primary-hover: #4f46e5;
+
+    /* Effects */
+    --portfolio-shadow-sm:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+
+    --portfolio-shadow-md:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    /* Radius */
+    --portfolio-radius-sm: 8px;
+    --portfolio-radius-md: 14px;
+    --portfolio-radius-lg: 24px;
+
+    /* Motion */
+    --portfolio-transition:
+        200ms ease;
+}
+
+
+html[data-theme='dark'] {
+
+    --portfolio-bg: #09090b;
+    --portfolio-surface: #111113;
+    --portfolio-surface-raised: #18181b;
+
+    --portfolio-text: #f8fafc;
+    --portfolio-text-secondary: #cbd5e1;
+    --portfolio-text-muted: #94a3b8;
+
+    --portfolio-border: #27272a;
+
+    --portfolio-primary: #818cf8;
+    --portfolio-primary-hover: #a5b4fc;
+
+    --portfolio-shadow-sm:
+        0 2px 8px rgba(0, 0, 0, 0.3);
+
+    --portfolio-shadow-md:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+}

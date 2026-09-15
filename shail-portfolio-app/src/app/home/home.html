@@ -1,0 +1,457 @@
+<main class="portfolio-main">
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION                                                              -->
+  <!-- ========================================================================= -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <!-- Live Status Pill -->
+        <div class="status-badge">
+          <span class="status-pulse" aria-hidden="true"></span>
+          <span>Available for Frontend & Angular Opportunities</span>
+        </div>
+
+        <!-- Hero Headline -->
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text">Shail</span>.<br />
+          Crafting Reactive & High-Performance Web Apps.
+        </h1>
+
+        <!-- Hero Subtitle / Summary -->
+        <p class="hero-description">
+          Senior Frontend Engineer specializing in <strong>Angular 22</strong>, reactive architecture with <strong>Signals</strong>, strict <strong>TypeScript</strong>, and token-driven design systems. Dedicated to delivering sub-second load times and accessible user experiences.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Projects</span>
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 3a.75.75 0 01.75.75v10.638l3.96-4.158a.75.75 0 111.08 1.04l-5.25 5.5a.75.75 0 01-1.08 0l-5.25-5.5a.75.75 0 111.08-1.04l3.96 4.158V3.75A.75.75 0 0110 3z" clip-rule="evenodd" />
+            </svg>
+          </a>
+
+          <a href="#contact" class="btn btn-secondary">
+            <span>Get in Touch</span>
+          </a>
+
+          <button type="button" class="btn btn-ghost copy-email-btn" (click)="copyEmail()" title="Copy Email">
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+              <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+            </svg>
+            <span>{{ isCopied() ? 'Email Copied! ✓' : 'Copy Email' }}</span>
+          </button>
+        </div>
+
+        <!-- Social Quick Links -->
+        <div class="hero-socials">
+          <span class="social-label text-muted">Connect:</span>
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-chip" aria-label="GitHub Profile">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-chip" aria-label="LinkedIn Profile">
+            <svg class="chip-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual / Stat Cards -->
+      <div class="hero-stats-panel">
+        <div class="stats-grid">
+          @for (item of stats; track item.label) {
+            <div class="stat-card">
+              <div class="stat-value gradient-text">{{ item.value }}</div>
+              <div class="stat-label">{{ item.label }}</div>
+              <div class="stat-sub text-muted">{{ item.sub }}</div>
+            </div>
+          }
+        </div>
+
+        <div class="hero-card-featured">
+          <div class="featured-card-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="featured-tag">Angular v22 • Reactive Core</span>
+          </div>
+          <div class="featured-card-body">
+            <code class="code-line"><span class="code-keyword">readonly</span> theme = <span class="code-fn">inject</span>(ThemeService);</code>
+            <code class="code-line"><span class="code-keyword">readonly</span> state = <span class="code-fn">signal</span>(&#123; mode: <span class="code-str">'reactive'</span>, cwv: <span class="code-num">99</span> &#125;);</code>
+            <code class="code-line"><span class="code-keyword">readonly</span> view = <span class="code-fn">computed</span>(() =&gt; state().cwv &gt; <span class="code-num">95</span>);</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- ABOUT SECTION                                                             -->
+  <!-- ========================================================================= -->
+  <section id="about" class="section about-section surface">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Background & Philosophy</span>
+        <h2>Architecting Modern Frontend Experiences</h2>
+        <p class="section-subtitle text-muted">
+          Passionate about clean code, high reactivity, and building software that feels effortless to use.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3>Reactive Signal Architectures</h3>
+          <p class="text-muted">
+            Leveraging Angular's latest Signal primitives, computed values, and linked signals to build highly predictable, glitch-free data flows with minimal change detection overhead.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 14 14"/>
+            </svg>
+          </div>
+          <h3>Core Web Vitals & Speed</h3>
+          <p class="text-muted">
+            Prioritizing Largest Contentful Paint (LCP), tree-shaking, lazy routing, and deferrable views (&#64;defer) to keep bundles compact and time-to-interactive under 1 second.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="18" height="18" x="3" y="3" rx="2"/>
+              <path d="M3 9h18"/>
+              <path d="M9 21V9"/>
+            </svg>
+          </div>
+          <h3>Design Systems & A11y</h3>
+          <p class="text-muted">
+            Crafting modular CSS token systems with flawless dark and light mode synchronization, keyboard navigation, and full compliance with WCAG AA accessibility standards.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SKILLS SECTION (Interactive Filter with Angular Animations)               -->
+  <!-- ========================================================================= -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Skillset</span>
+        <h2>Technical Competencies & Arsenal</h2>
+        <p class="section-subtitle text-muted">
+          Click the categories below to explore skills with animated filtering.
+        </p>
+
+        <!-- Category Filters -->
+        <div class="category-filters" role="tablist" aria-label="Skill Categories">
+          <button
+            type="button"
+            class="filter-btn"
+            [class.active]="selectedCategory() === 'all'"
+            (click)="setCategory('all')"
+            role="tab"
+            [attr.aria-selected]="selectedCategory() === 'all'"
+          >
+            All Disciplines
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            [class.active]="selectedCategory() === 'frontend'"
+            (click)="setCategory('frontend')"
+            role="tab"
+            [attr.aria-selected]="selectedCategory() === 'frontend'"
+          >
+            Frontend & Angular
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            [class.active]="selectedCategory() === 'architecture'"
+            (click)="setCategory('architecture')"
+            role="tab"
+            [attr.aria-selected]="selectedCategory() === 'architecture'"
+          >
+            Architecture & State
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            [class.active]="selectedCategory() === 'tools'"
+            (click)="setCategory('tools')"
+            role="tab"
+            [attr.aria-selected]="selectedCategory() === 'tools'"
+          >
+            Tooling & Testing
+          </button>
+        </div>
+      </div>
+
+      <!-- Animated Skill Cards Grid with animate.enter -->
+      <div class="skills-grid">
+        @for (skill of filteredSkills(); track skill.name) {
+          <div class="skill-card" animate.enter="skill-card-enter">
+            <div class="skill-card-header">
+              <div class="skill-badge">{{ skill.level }}</div>
+              <span class="skill-category-tag">{{ skill.category }}</span>
+            </div>
+            <h4 class="skill-name">{{ skill.name }}</h4>
+            <p class="skill-highlight text-muted">{{ skill.highlight }}</p>
+            <div class="skill-meter" aria-hidden="true">
+              <div class="skill-meter-fill"></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FEATURED PROJECTS                                                         -->
+  <!-- ========================================================================= -->
+  <section id="projects" class="section projects-section surface">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Featured Work</span>
+        <h2>Selected Projects & Solutions</h2>
+        <p class="section-subtitle text-muted">
+          Production-grade applications engineered with attention to performance, reactivity, and user delight.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        @for (project of projects; track project.id) {
+          <article class="project-card">
+            <div class="project-card-banner">
+              <span class="project-category">{{ project.category }}</span>
+              <span class="project-metric">{{ project.metric }}</span>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p class="project-desc text-muted">{{ project.description }}</p>
+
+              <div class="tag-pills">
+                @for (tag of project.tags; track tag) {
+                  <span class="tag-pill">{{ tag }}</span>
+                }
+              </div>
+
+              <div class="project-actions">
+                <button
+                  type="button"
+                  class="btn-project-details"
+                  (click)="openProject(project)"
+                >
+                  <span>Quick Overview</span>
+                  <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+
+                <a
+                  [href]="project.githubUrl"
+                  target="_blank"
+                  rel="noopener"
+                  class="project-link-icon"
+                  aria-label="View Source Code"
+                  title="Source Code"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CAREER JOURNEY & MILESTONES                                               -->
+  <!-- ========================================================================= -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Career Track</span>
+        <h2>Engineering Experience & Milestones</h2>
+        <p class="section-subtitle text-muted">
+          A track record of high ownership, architecture evolution, and scalable frontend development.
+        </p>
+      </div>
+
+      <div class="timeline">
+        @for (milestone of milestones; track milestone.period) {
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+              <span class="marker-line"></span>
+            </div>
+
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">{{ milestone.role }}</h3>
+                  <div class="timeline-company text-muted">{{ milestone.company }}</div>
+                </div>
+                <span class="timeline-period">{{ milestone.period }}</span>
+              </div>
+
+              <p class="timeline-desc">{{ milestone.description }}</p>
+
+              <ul class="timeline-bullets">
+                @for (achievement of milestone.achievements; track achievement) {
+                  <li>{{ achievement }}</li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CONTACT & CONNECT SECTION                                                 -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="section contact-section surface">
+    <div class="container">
+      <div class="contact-box">
+        <div class="contact-header">
+          <span class="section-badge">Let's Connect</span>
+          <h2 class="contact-title">Have an exciting opportunity or project?</h2>
+          <p class="contact-subtitle text-muted">
+            I'm always keen to discuss modern web architecture, Angular contracts, and high-impact engineering challenges.
+          </p>
+        </div>
+
+        <div class="contact-interactive">
+          <div class="email-display-card">
+            <span class="email-label text-muted">Direct Email</span>
+            <span class="email-address">{{ emailAddress }}</span>
+            <button
+              type="button"
+              class="btn btn-primary email-copy-button"
+              (click)="copyEmail()"
+            >
+              <span>{{ isCopied() ? 'Copied to Clipboard! ✓' : 'Copy Email Address' }}</span>
+            </button>
+          </div>
+
+          <div class="contact-meta-cards">
+            <a href="https://github.com" target="_blank" rel="noopener" class="contact-meta-card">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <div>
+                <strong>GitHub</strong>
+                <span class="text-muted">Explore open-source code</span>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-meta-card">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              </svg>
+              <div>
+                <strong>LinkedIn</strong>
+                <span class="text-muted">Professional network & recommendations</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER                                                                    -->
+  <!-- ========================================================================= -->
+  <footer class="portfolio-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-badge">S</span>
+        <span>Shail<strong>.dev</strong></span>
+      </div>
+      <div class="footer-text text-muted">
+        Crafted with Angular 22, Signals, and CSS Design Tokens.
+      </div>
+      <div class="footer-copy text-muted">
+        © 2026 Shail. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- PROJECT OVERVIEW MODAL with animate.enter                                 -->
+  <!-- ========================================================================= -->
+  @if (activeProject()) {
+    <div class="modal-backdrop" (click)="closeProject()">
+      <div
+        class="modal-card"
+        animate.enter="modal-enter"
+        (click)="$event.stopPropagation()"
+        role="dialog"
+        [attr.aria-label]="activeProject()?.title"
+      >
+        <div class="modal-header">
+          <span class="modal-category">{{ activeProject()?.category }}</span>
+          <button type="button" class="modal-close-btn" (click)="closeProject()" aria-label="Close dialog">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6 6 18"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <h3 class="modal-title">{{ activeProject()?.title }}</h3>
+        <p class="modal-desc">{{ activeProject()?.description }}</p>
+
+        <div class="modal-metric-badge">
+          <strong>Key Highlight:</strong> {{ activeProject()?.metric }}
+        </div>
+
+        <div class="modal-tags">
+          @for (tag of activeProject()?.tags; track tag) {
+            <span class="tag-pill">{{ tag }}</span>
+          }
+        </div>
+
+        <div class="modal-actions">
+          <a [href]="activeProject()?.githubUrl" target="_blank" rel="noopener" class="btn btn-secondary">
+            View Source on GitHub
+          </a>
+          <button type="button" class="btn btn-primary" (click)="closeProject()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+
+</main>

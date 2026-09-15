@@ -1,0 +1,102 @@
+<header class="header">
+  <div class="header-container">
+    <a href="#hero" class="brand" (click)="closeMenu()">
+      <span class="brand-badge">S</span>
+      <span class="brand-text">Shail<span class="brand-dot">.dev</span></span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="nav-desktop" aria-label="Main Navigation">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Journey</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <!-- Theme Switcher Pill -->
+      <div class="theme-switcher" role="group" aria-label="Theme Selection">
+        <button
+          type="button"
+          class="theme-btn"
+          [class.active]="themeService.theme() === 'light'"
+          (click)="themeService.setPreference('light')"
+          aria-label="Switch to light mode"
+          title="Light Theme"
+        >
+          <!-- Sun Icon -->
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/>
+            <path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/>
+            <path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/>
+            <path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/>
+            <path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          class="theme-btn"
+          [class.active]="themeService.theme() === 'dark'"
+          (click)="themeService.setPreference('dark')"
+          aria-label="Switch to dark mode"
+          title="Dark Theme"
+        >
+          <!-- Moon Icon -->
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+      </div>
+
+      <a href="#contact" class="cta-button">
+        <span>Let's Talk</span>
+        <svg class="arrow-icon" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+        </svg>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        type="button"
+        class="mobile-toggle"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen()"
+        aria-label="Toggle Navigation Menu"
+      >
+        @if (!isMenuOpen()) {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        } @else {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M18 6 6 18"/>
+            <path d="m6 6 12 12"/>
+          </svg>
+        }
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu with animate.enter -->
+  @if (isMenuOpen()) {
+    <div class="mobile-drawer" animate.enter="drawer-enter">
+      <nav class="mobile-nav" aria-label="Mobile Navigation">
+        <a href="#about" class="mobile-link" (click)="closeMenu()">About</a>
+        <a href="#skills" class="mobile-link" (click)="closeMenu()">Skills</a>
+        <a href="#projects" class="mobile-link" (click)="closeMenu()">Projects</a>
+        <a href="#experience" class="mobile-link" (click)="closeMenu()">Journey</a>
+        <a href="#contact" class="mobile-link" (click)="closeMenu()">Contact</a>
+        <a href="#contact" class="mobile-cta" (click)="closeMenu()">Get In Touch</a>
+      </nav>
+    </div>
+  }
+</header>
