@@ -21,7 +21,7 @@ describe('Home', () => {
 
   it('should filter skills by category', () => {
     expect(component.selectedCategory()).toBe('all');
-    expect(component.filteredSkills().length).toBe(12);
+    expect(component.filteredSkills().length).toBe(14);
 
     component.setCategory('frontend');
     expect(component.selectedCategory()).toBe('frontend');

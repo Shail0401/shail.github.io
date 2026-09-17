@@ -37,7 +37,7 @@ export interface Milestone {
 export class Home {
   readonly themeService = inject(ThemeService);
 
-  readonly emailAddress = 'shail.dev.contact@gmail.com';
+  readonly emailAddress = 'shail04.learning@gmail.com';
   readonly isCopied = signal(false);
 
   // Skill category filter
@@ -47,172 +47,166 @@ export class Home {
   readonly activeProject = signal<Project | null>(null);
 
   readonly stats = [
-    { label: 'Years Experience', value: '4+', sub: 'In Web & Angular' },
-    { label: 'Projects Shipped', value: '25+', sub: 'Production Grade' },
-    { label: 'Lighthouse Score', value: '99', sub: 'Performance & CWV' },
-    { label: 'Type-Safe Code', value: '100%', sub: 'Signals & Strict TS' },
+    { label: 'Years Experience', value: '3+', sub: 'Full Stack Engineering' },
+    { label: 'Features Shipped', value: '10+', sub: 'Production Grade' },
+    { label: 'Core Strength', value: '4', sub: 'Angular, Go, Java, MySQL' },
+    { label: 'Current Focus', value: 'Full Stack', sub: 'Reliable Product Delivery' },
   ];
 
   readonly skills: Skill[] = [
     {
-      name: 'Angular 22 & Modern Features',
+      name: 'Angular & TypeScript',
       category: 'frontend',
-      level: 'Expert',
+      level: 'Advanced',
       icon: 'angular',
-      highlight: 'Standalone, Signals, LinkedSignals, Control Flow, Signal Forms',
+      highlight: 'Standalone components, Signals, RxJS, routing, forms, and strict typing',
     },
     {
       name: 'TypeScript & Strict Typing',
       category: 'frontend',
       level: 'Advanced',
       icon: 'ts',
-      highlight: 'Generics, Utility Types, Inference, Strict Compilation',
+      highlight: 'Generics, utility types, reusable components, and strict compilation',
     },
     {
       name: 'Modern CSS & SCSS',
       category: 'frontend',
       level: 'Advanced',
       icon: 'scss',
-      highlight: 'Design Tokens, CSS Variables, Glassmorphism, Micro-interactions',
+      highlight: 'Responsive layouts, SCSS, CSS variables, accessibility, and design tokens',
     },
     {
       name: 'Angular Material & CDK',
       category: 'frontend',
       level: 'Advanced',
       icon: 'material',
-      highlight: 'M3 Theming, Virtual Scroll, Drag & Drop, Popovers',
+      highlight: 'Reusable UI, data tables, dialogs, menus, and responsive workflows',
     },
     {
-      name: 'Reactive Architecture & RxJS',
+      name: 'Go Backend Development',
       category: 'architecture',
-      level: 'Expert',
+      level: 'Advanced',
+      icon: 'go',
+      highlight: 'REST APIs, services, concurrency, validation, and maintainable backend design',
+    },
+    {
+      name: 'Java & Spring Boot',
+      category: 'architecture',
+      level: 'Advanced',
+      icon: 'java',
+      highlight: 'Object-oriented design, REST services, dependency injection, and integrations',
+    },
+    {
+      name: 'REST API Architecture',
+      category: 'architecture',
+      level: 'Advanced',
+      icon: 'api',
+      highlight: 'API contracts, authentication flows, error handling, and frontend integration',
+    },
+    {
+      name: 'Reactive State & RxJS',
+      category: 'architecture',
+      level: 'Advanced',
       icon: 'rxjs',
-      highlight: 'Higher-Order Streams, Signal Interop, Declarative State',
+      highlight: 'Signals, observables, declarative data flows, and predictable local state',
     },
     {
-      name: 'Web Performance & CWV',
+      name: 'MySQL & Data Modeling',
       category: 'architecture',
-      level: 'Advanced',
-      icon: 'speed',
-      highlight: 'LCP Optimization, Lazy Loading, Deferrable Views (@defer)',
+      level: 'Proficient',
+      icon: 'mysql',
+      highlight: 'Relational modeling, joins, indexing, query design, and data integrity',
     },
     {
-      name: 'Accessibility (A11y)',
-      category: 'architecture',
-      level: 'Advanced',
-      icon: 'a11y',
-      highlight: 'WCAG 2.1 AA, ARIA Semantics, Keyboard Focus & AXE Audits',
-    },
-    {
-      name: 'State Management Systems',
-      category: 'architecture',
-      level: 'Advanced',
-      icon: 'state',
-      highlight: 'Signal Stores, Local State Patterns, Predictable Mutation',
-    },
-    {
-      name: 'Testing (Vitest & Unit)',
+      name: 'Testing & Quality Engineering',
       category: 'tools',
       level: 'Advanced',
       icon: 'test',
-      highlight: 'Component Testing, Signal State Testing, Testbed Isolation',
+      highlight: 'Unit testing, component testing, API verification, and regression prevention',
     },
     {
-      name: 'Git, CI/CD & Automation',
+      name: 'Git, GitHub & CI/CD',
       category: 'tools',
       level: 'Proficient',
       icon: 'git',
-      highlight: 'Branching Strategy, GitHub Actions, Automated Build Checks',
+      highlight: 'Branching strategy, pull requests, code reviews, CI checks, and collaboration',
     },
     {
-      name: 'Node.js & RESTful APIs',
+      name: 'Docker & Development Environments',
       category: 'tools',
       level: 'Proficient',
-      icon: 'node',
-      highlight: 'API Integration, HTTP Interceptors, Error Resilience',
+      icon: 'docker',
+      highlight: 'Containerized services, repeatable local setup, and environment consistency',
+    },
+    {
+      name: 'AWS & Cloud Fundamentals',
+      category: 'tools',
+      level: 'Proficient',
+      icon: 'aws',
+      highlight: 'Cloud deployment concepts, IAM awareness, environments, and service integration',
     },
     {
       name: 'Angular Build Tools & Vite',
       category: 'tools',
       level: 'Advanced',
       icon: 'vite',
-      highlight: 'ESBuild Toolchain, Tree Shaking, Fast HMR, Bundle Splitting',
+      highlight: 'Angular CLI, build optimization, environment configuration, and deployment readiness',
     },
   ];
 
   readonly projects: Project[] = [
     {
-      id: 'enterprise-dashboard',
-      title: 'Real-Time Enterprise Analytics Dashboard',
-      category: 'Enterprise SaaS',
-      description:
-        'A high-performance reactive dashboard with live data streaming, dynamic theme toggling, interactive charting, and sub-second load times using Angular 22 Signals.',
-      tags: ['Angular 22', 'Signals', 'RxJS', 'SCSS Tokens', 'Vitest'],
-      metric: '60 FPS Stream • 99 Performance',
+      id: 'fullstack-product',
+      title: 'Full Stack Product Showcase',
+      category: 'Coming Soon',
+      description: 'A production-ready full stack project is currently in development, bringing together an Angular interface, Go services, and relational data.',
+      tags: ['Angular', 'Go', 'MySQL'],
+      metric: 'Coming Soon',
       featured: true,
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
     },
     {
-      id: 'commerce-storefront',
-      title: 'Ultra-Fast Accessible E-Commerce Platform',
-      category: 'E-Commerce & Web',
-      description:
-        'Full-featured modern storefront featuring signal-based cart state management, deferrable views (@defer), image optimization, and full WCAG AA compliance.',
-      tags: ['Angular', 'TypeScript', 'A11y', 'Signal Forms', 'Responsive'],
-      metric: '0.9s LCP • 100% Accessible',
+      id: 'angular-go-application',
+      title: 'Angular + Go Application',
+      category: 'Coming Soon',
+      description: 'A full stack Angular and Go application is being shaped into a polished case study focused on API integration and maintainable delivery.',
+      tags: ['Angular', 'Go', 'REST APIs'],
+      metric: 'Coming Soon',
       featured: true,
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
     },
     {
-      id: 'design-system',
-      title: 'Unified Design System & Token Engine',
-      category: 'Architecture & UI',
-      description:
-        'Scalable component library and design system powered by CSS custom properties, seamless dark/light modes, accessible primitives, and fluid typography.',
-      tags: ['Design Tokens', 'Angular CDK', 'SCSS', 'Color Scheme'],
-      metric: '30+ Components • Multi-Theme',
+      id: 'java-mysql-system',
+      title: 'Java and MySQL Backend System',
+      category: 'Coming Soon',
+      description: 'A Java and MySQL backend project is in progress, with emphasis on service design, business logic, and dependable data access.',
+      tags: ['Java', 'MySQL', 'Backend'],
+      metric: 'Coming Soon',
       featured: true,
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
     },
   ];
 
   readonly milestones: Milestone[] = [
     {
-      period: '2024 — Present',
-      role: 'Senior Frontend & Angular Engineer',
-      company: 'Tech Solutions & Enterprise Products',
+      period: '2024 — 2026',
+      role: 'Software Engineer',
+      company: 'Securly Softwares',
       description:
-        'Spearheading modern Angular architectures, driving Signal adoption, optimizing Core Web Vitals, and mentoring frontend teams in reactive best practices.',
+        'Contributing across frontend and backend systems using Angular, Golang, and PHP to deliver reliable product features.',
       achievements: [
-        'Migrated core apps to Angular standalone architecture and modern signals, decreasing bundle size by 35%.',
-        'Achieved consistent 95+ Google Lighthouse scores across production web portals.',
-        'Engineered reusable design token library with instant theme switching support.',
+        'Built and shipped production-grade Angular features with reusable components and API integrations.',
+        'Developed and maintained Golang services and supported PHP-based application workflows.',
+        'Collaborated with product and engineering teams to deliver quality improvements across the stack.',
       ],
     },
     {
-      period: '2022 — 2024',
-      role: 'Frontend Web Developer',
-      company: 'Digital Innovation Labs',
+      period: '2023 — 2024',
+      role: 'Software Engineer',
+      company: 'IBM',
       description:
-        'Designed and shipped interactive customer-facing web applications, responsive dashboards, and API-driven reactive experiences.',
+        'Worked on backend engineering with Golang and Java, building dependable services and implementing business requirements.',
       achievements: [
-        'Built 10+ end-to-end features with strict TypeScript and reactive RxJS pipelines.',
-        'Implemented comprehensive automated unit test suites with Vitest and Jest.',
-        'Integrated WCAG AA accessibility compliance across all web surfaces.',
-      ],
-    },
-    {
-      period: '2020 — 2022',
-      role: 'Associate Software Engineer',
-      company: 'Software Systems Inc.',
-      description:
-        'Developed foundational web components, integrated RESTful backend APIs, and participated in Agile development cycles.',
-      achievements: [
-        'Collaborated on modernizing legacy monolithic interfaces into componentized web apps.',
-        'Authored clean CSS/SCSS styling frameworks with cross-browser consistency.',
+        'Implemented backend features and RESTful integrations using Golang and Java.',
+        'Worked with relational data and service-level logic to support production applications.',
+        'Participated in code reviews, debugging, and iterative Agile delivery.',
       ],
     },
   ];
